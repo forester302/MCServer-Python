@@ -10,6 +10,7 @@ class Player:
         self.pitch = pitch
         self.on_ground = True
         self.connection: Connection = connection
+        self.profile = None
 
     def get_position(self):
         return (self.x, self.y, self.z)

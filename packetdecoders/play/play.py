@@ -7,9 +7,10 @@ from data import players, Player, Connection
 import asyncio
 import time
 
-from events import event_manager, MoveEvent, JoinEvent
+from events import event_manager, MoveEvent, JoinEvent, LeaveEvent
 
 from enums import Event
+from data import online_players
 
 import traceback
 
@@ -102,12 +103,14 @@ async def keep_alive(connection: Connection, i):
         packet.set_reason("Timed out")
         connection.writer.write(packet.construct())
         connection.writer.close()
+        event_manager.dispatch(LeaveEvent(connection.player))
         print(f"Disconnected from {connection.writer.get_extra_info('peername')} because they timed out")
         return False
     try:
         connection.writer.write(data)
         await connection.writer.drain()
     except ConnectionResetError as e:
+        event_manager.dispatch(LeaveEvent(connection.player))
         print(f"Disconnected from {connection.writer.get_extra_info('peername')}")
         connection.open = False
         connection.writer.close()
