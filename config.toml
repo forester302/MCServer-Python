@@ -1,0 +1,9 @@
+[spawn]
+x = 0
+y = 320
+z = 0
+yaw = 0
+pitch = 0
+
+[server]
+tick_rate = 20

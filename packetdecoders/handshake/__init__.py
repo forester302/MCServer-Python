@@ -1,0 +1,1 @@
+from .handshake import decode_packet as handshake_decode
