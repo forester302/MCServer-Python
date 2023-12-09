@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import String
+from .packets import Packet
+from .datatypes import String
 
 class DisconnectPacket(Packet):
     packet_id = 0x1b

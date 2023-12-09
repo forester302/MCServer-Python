@@ -1,5 +1,5 @@
-from ..packets import Packet
-from ..datatypes import String, UUID, VarInt
+from .packets import Packet
+from .datatypes import String, UUID, VarInt
 
 class LoginStartPacket(Packet):
     packet_id = 0x00

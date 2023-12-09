@@ -1,5 +1,5 @@
-from ..packets import Packet
-from ..datatypes import VarInt, String, Short, Byte
+from .packets import Packet
+from .datatypes import VarInt, String, Short, Byte
 
 class HandshakePacket(Packet):
     packet_id = 0x00

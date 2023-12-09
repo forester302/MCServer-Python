@@ -1,4 +1,4 @@
-from .packets import HandshakePacket
+from packets import HandshakePacket
 from enums import State
 
 packets = {

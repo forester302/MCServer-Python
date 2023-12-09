@@ -1,5 +1,5 @@
 from enums import State
-from .packets import StatusPacket, PingPacket
+from packets import StatusPacket, PingPacket
 
 packets = {
     0x00: lambda packet, connection: status_request(connection),

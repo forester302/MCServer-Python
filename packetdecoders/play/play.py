@@ -1,13 +1,15 @@
-from .packets import LoginPlayPacket, SynchronizePlayerPositionPacket, SetDefaultSpawnPositionPacket, ClientboundKeepAlivePacket
-from .packets import ServerboundKeepAlivePacket, DisconnectPacket, SetPlayerPositionPacket, SetPlayerPositionAndRotationPacket
-from .packets import SetPlayerRotationPacket, PlayerAbilitiesPacket
+from packets import LoginPlayPacket, SynchronizePlayerPositionPacket, SetDefaultSpawnPositionPacket, ClientboundKeepAlivePacket
+from packets import ServerboundKeepAlivePacket, DisconnectPacket, SetPlayerPositionPacket, SetPlayerPositionAndRotationPacket
+from packets import SetPlayerRotationPacket, PlayerAbilitiesPacket
 
 from util import run_every
 from data import players, Player, Connection
 import asyncio
 import time
 
-from events import event_manager, MoveEvent
+from events import event_manager, MoveEvent, JoinEvent
+
+from enums import Event
 
 import traceback
 
@@ -85,6 +87,7 @@ def play_start(connection: Connection):
 
     a = asyncio.get_event_loop()
     connection.keep_alive_task = a.create_task(run_every(1, keep_alive, connection))
+    event_manager.dispatch(JoinEvent(connection.player))
 
 async def keep_alive(connection: Connection, i):
     data = b"\x00"

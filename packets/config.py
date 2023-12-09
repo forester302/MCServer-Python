@@ -1,4 +1,4 @@
-from ..packets import Packet
+from .packets import Packet
 
 class FinishConfigPacket(Packet):
     packet_id = 0x02

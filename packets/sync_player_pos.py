@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Double, Float, Byte, VarInt
+from .packets import Packet
+from .datatypes import Double, Float, Byte, VarInt
 
 class SynchronizePlayerPositionPacket(Packet):
     packet_id = 0x3e

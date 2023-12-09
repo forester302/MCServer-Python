@@ -1,4 +1,4 @@
-from .packets import SendRegistryDataPacket, FinishConfigPacket
+from packets import SendRegistryDataPacket, FinishConfigPacket
 from ..play import play_start
 from enums import State
 

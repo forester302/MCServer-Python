@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Position, Float
+from .packets import Packet
+from .datatypes import Position, Float
 
 class SetDefaultSpawnPositionPacket(Packet):
     packet_id = 0x52

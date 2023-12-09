@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Long
+from .packets import Packet
+from .datatypes import Long
 
 class KeepAlivePacket(Packet):
     def __init__(self, data: bytes = None):

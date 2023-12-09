@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Byte, Float
+from .packets import Packet
+from .datatypes import Byte, Float
 
 class PlayerAbilitiesPacket(Packet):
     packet_id = 0x36

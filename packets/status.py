@@ -1,5 +1,5 @@
-from ..packets import Packet
-from ..datatypes import VarInt, JSON, Long
+from .packets import Packet
+from .datatypes import VarInt, JSON, Long
 
 class StatusPacket(Packet):
     packet_id = 0x00

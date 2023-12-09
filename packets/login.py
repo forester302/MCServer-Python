@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Int, Boolean, Array, VarInt, String, Long, Byte, Position
+from .packets import Packet
+from .datatypes import Int, Boolean, Array, VarInt, String, Long, Byte, Position
 
 class LoginPlayPacket(Packet):
     packet_id = 0x29

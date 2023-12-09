@@ -1,5 +1,5 @@
-from ...packets import Packet
-from ...datatypes import Double, Float, Boolean
+from .packets import Packet
+from .datatypes import Double, Float, Boolean
 
 class SetPlayerPositionPacket(Packet):
     packet_id = 0x16

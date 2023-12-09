@@ -1,5 +1,5 @@
 from enums import State
-from .packets import LoginStartPacket, LoginSuccessPacket
+from packets import LoginStartPacket, LoginSuccessPacket
 from ..config import config_start
 
 from data import config, players
